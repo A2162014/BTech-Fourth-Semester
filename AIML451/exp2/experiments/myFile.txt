@@ -1,0 +1,2 @@
+Hello Ashvath!
+This message is from myFile.txt.
