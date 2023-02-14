@@ -1,0 +1,93 @@
+To install gcc compiler in linux follow the steps:
+-----------------
+Step1:
+sudo apt install gcc
+or
+sudo apt update
+sudo apt install build-essential
+sudo apt-get install manpages-dev
+sudo apt install gcc
+-----------------
+Step 2: Check gcc installed or not
+gcc –version
+*************************************
+check the following video to understand about fork and exit system calls
+https://youtu.be/RpWQ6qaYfVw
+**************************************
+Reading Notes:
+1. fork(): to create a child process
+2. exec(): to assign a task to child process
+3. exit(): to end the process
+4. getpid(): returns process id of calling process
+5. getppid(): return Parent of child Process means Parent process it self
+*****************************************
+Sample program to display sum of even numbers(in parent process) and sum of odd numbers(in child processs)
+
+// C program to illustrate use of fork() &
+// exec() system call for process creation
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <sys/wait.h>
+
+int main(){
+pid_t pid;
+int sum = 1;
+int i,n;
+printf("Enter n value:");
+scanf("%d",&n);
+pid = fork();
+
+if (pid == -1){
+
+	// pid == -1 means error occurred
+	printf("can't fork, error occurred\n");
+	exit(EXIT_FAILURE);
+}
+else if (pid == 0){
+
+	// pid == 0 means child process created
+	// getpid() returns process id of calling process
+	// Here It will return process id of child process
+	printf("child process, pid = %u\n",getpid());
+	// Here It will return Parent of child Process means Parent process it self
+	printf("parent of child process, pid = %u\n",getppid());
+
+	printf("From child process\n");
+  	for(i=1;i<n;i+=2)
+	{
+		printf("%d\n",i);
+		sum+=i;
+	}
+	printf("Odd sum:%d\n",sum);
+	exit(0);
+}
+else{
+	// a positive number is returned for the pid of
+	// parent process
+	// getppid() returns process id of parent of
+	// calling process
+       // Here It will return parent of parent process's ID
+	printf("Parent Of parent process, pid = %u\n",getppid());
+	printf("parent process, pid = %u\n",getpid());
+	printf("From process\n");
+	for(i=0;i<n;i+=2)
+	{
+		printf("%d\n",i);
+		sum+=i;
+	}
+	printf("Even sum:%d\n",sum);
+   }
+  exit(0);
+}
+
+******************************************************
+Execution steps:
+
+Save as: exp3.c
+Compile as: gcc exp3.c -o exp3
+run as: ./exp3
+******************************************************
