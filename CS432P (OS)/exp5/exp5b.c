@@ -34,9 +34,7 @@ int main()
     printf("Enter the time quantum: ");
     scanf("%d", &quantum);
 
-    printf("===========================================\n");
-    printf("PID\tAT\tBT\tCT\tTAT\tWT\n");
-    printf("===========================================\n");
+    printf("Process \tArrival Time \tBurst Time \tCompletion Time \tTurnaround Time \tWaiting Time\n");
 
     // Run the round robin scheduling algorithm
     while (completed < n)
@@ -74,17 +72,15 @@ int main()
     // Print the results for each process
     for (i = 0; i < n; i++)
     {
-        printf("%d\t%d\t%d\t%d\t%d\t%d\n", processes[i].pid, processes[i].arrival_time, processes[i].burst_time,
+        printf("%d \t\t%d \t\t%d \t\t%d \t\t\t%d \t\t\t%d\n", processes[i].pid, processes[i].arrival_time, processes[i].burst_time,
                processes[i].completion_time, processes[i].turnaround_time, processes[i].waiting_time);
     }
 
     // Calculate and print the average waiting time and average turnaround time
     avg_waiting_time /= n;
     avg_turnaround_time /= n;
-    printf("===========================================\n");
-    printf("Average Waiting Time: %f\n", avg_waiting_time);
-    printf("Average Turnaround Time: %f\n", avg_turnaround_time);
-    printf("===========================================\n");
+    printf("Average Waiting Time: %.2f\n", avg_waiting_time);
+    printf("Average Turnaround Time: %.2f\n", avg_turnaround_time);
 
     free(processes);
     return 0;

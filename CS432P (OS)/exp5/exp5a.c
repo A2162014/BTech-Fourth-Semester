@@ -40,7 +40,7 @@ void avg_time(int n, int bt[])
     float avg_wt = (float)total_wt / n;
     float avg_tat = (float)total_tat / n;
 
-    printf("\nAverage waiting time = %0.2f\n", avg_wt);
+    printf("Average waiting time = %0.2f\n", avg_wt);
     printf("Average turnaround time = %0.2f\n", avg_tat);
 }
 
