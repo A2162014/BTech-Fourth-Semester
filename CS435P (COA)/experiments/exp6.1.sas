@@ -1,0 +1,22 @@
+1,12,#FALSE#,#FALSE#,"exp6.1",0,0,0,32,1,6,1736046190
+0,0,0,0,0,0
+0
+0
+1
+"pushpopadd",6
+0,2,"MSF",0,0,0,0,#FALSE#
+1,2,"CAL $pushpopadd",0,0,0,0,#FALSE#
+5,2,"HLT",0,0,0,0,#FALSE#
+6,-1,"pushpopadd",0,0,0,0,#FALSE#
+6,0,"PSH #6",0,0,0,0,#FALSE#
+10,0,"PSH #4",0,0,0,0,#FALSE#
+14,0,"POP R01",0,0,0,0,#FALSE#
+17,0,"POP R02",0,0,0,0,#FALSE#
+20,1,"ADD R01, R02",0,0,0,0,#FALSE#
+25,0,"PSH R02",0,0,0,0,#FALSE#
+28,0,"POP R03",0,0,0,0,#FALSE#
+31,2,"RET",0,0,0,0,#FALSE#
+0
+0
+0
+-1
