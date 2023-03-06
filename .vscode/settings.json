@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.exe": "code-text-binary",
+        "*.rmd": "markdown",
+        "stdio.h": "c",
+        "cmath": "c",
+        "limits": "c",
+        "type_traits": "c",
+        "cstdlib": "c"
+    }
+}
