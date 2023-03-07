@@ -6,7 +6,6 @@
 struct Process
 {
     int pid;
-    /// @brief
     int arrival_time;
     int burst_time;
     int remaining;
@@ -14,7 +13,7 @@ struct Process
     int wait_time;
     int turn_time;
 };
-
+ 
 void SJF(struct Process p[], int n);
 void CalculateWaitingTime(struct Process p[], int n);
 void CalculateTurnaroundTime(struct Process p[], int n);
@@ -62,13 +61,11 @@ int main()
 
 void SJF(struct Process p[], int n)
 {
-    int time = 0;
-    int count = 0;
+    int time = 0, count = 0;
 
     while (count != n)
     {
-        int shortest = -1;
-        int shortest_burst_time = INT_MAX;
+        int shortest = -1, shortest_burst_time = INT_MAX;
 
         // Find process with shortest remaining burst time
         for (int i = 0; i < n; i++)
@@ -82,9 +79,7 @@ void SJF(struct Process p[], int n)
 
         // If no process is available, increment time
         if (shortest == -1)
-        {
             time++;
-        }
         else
         {
             // Decrement remaining burst time of selected process
@@ -110,17 +105,13 @@ void SJF(struct Process p[], int n)
 void CalculateWaitingTime(struct Process p[], int n)
 {
     for (int i = 0; i < n; i++)
-    {
         p[i].wait_time = p[i].comp_time - p[i].arrival_time - p[i].burst_time;
-    }
 }
 
 void CalculateTurnaroundTime(struct Process p[], int n)
 {
     for (int i = 0; i < n; i++)
-    {
         p[i].turn_time = p[i].comp_time - p[i].arrival_time;
-    }
 }
 
 void PrintResults(struct Process p[], int n, float avg_wt, float avg_tat)
@@ -142,9 +133,7 @@ void PrintResults(struct Process p[], int n, float avg_wt, float avg_tat)
     printf("\n*Result*\n");
     printf("\nProcess \tArrival Time \tBurst Time \tCompletion Time \tWaiting Time \tTurnaround Time\n");
     for (int i = 0; i < n; i++)
-    {
         printf("%d \t\t%d \t\t%d \t\t%d \t\t\t%d \t\t\t%d\n", p[i].pid, p[i].arrival_time, p[i].burst_time, p[i].comp_time, p[i].wait_time, p[i].turn_time);
-    }
     printf("\nAverage Waiting Time: %.2f\n", avg_wt);
     printf("Average Turnaround Time: %.2f\n\n", avg_tat);
 }
@@ -164,9 +153,7 @@ int GetPositiveIntegerInput(char message[])
     {
         value = GetIntegerInput(message);
         if (value < 0)
-        {
             printf("Invalid Input Error: Please enter a positive integer.\n");
-        }
     } while (value < 0);
     return value;
 }

@@ -53,34 +53,31 @@ int main()
 
     int t = 0;
 
-    printf("\n*Result*\n");
+    printf("\n*Results*\n");
 
-    printf("\nOrder of process Execution is\n");
+    printf("\nOrder of Process Execution:\n");
     for (int i = 0; i < n; i++)
     {
-        printf("P%d is executed from %d to %d\n", index[i], t, t + burst[i]);
+        printf("Process %d is executed from %d to %d\n", index[i], t, t + burst[i]);
         t += burst[i];
     }
-    printf("\n");
-    printf("Process Id\tBurst Time\tWait Time\n");
+    printf("\nProcess \tBurst Time\tWait Time\n");
     int wait_time = 0;
     int total_wait_time = 0;
     for (int i = 0; i < n; i++)
     {
-        printf("P%d\t\t%d\t\t%d\n", index[i], burst[i], wait_time);
+        printf("%d \t\t%d \t\t%d\n", index[i], burst[i], wait_time);
         total_wait_time += wait_time;
         wait_time += burst[i];
     }
 
     float avg_wait_time = (float)total_wait_time / n;
-    printf("\nAverage waiting time is %.2f\n", avg_wait_time);
+    printf("\nAverage Waiting Time: %.2f\n", avg_wait_time);
 
     int total_Turn_Around = 0;
     for (int i = 0; i < n; i++)
-    {
         total_Turn_Around += burst[i];
-    }
     float avg_Turn_Around = (float)total_Turn_Around / n;
-    printf("Average TurnAround Time is %.2f\n\n", avg_Turn_Around);
+    printf("Average TurnAround Time: %.2f\n\n", avg_Turn_Around);
     return 0;
 }
