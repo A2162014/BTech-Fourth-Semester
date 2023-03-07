@@ -6,7 +6,7 @@
 struct Process
 {
     int pid;
-    /// @brief 
+    /// @brief
     int arrival_time;
     int burst_time;
     int remaining;

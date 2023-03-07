@@ -39,6 +39,7 @@ void print_results(struct Process *processes, int num_processes, int time_quantu
 {
     int temp_bt[num_processes];
     int count = 0, completion_time = 0, y = num_processes;
+    int turnaround_time, waiting_time;
     float total_turnaround_time = 0, total_waiting_time = 0;
 
     // Copy the burst time of each process to a temporary array
@@ -71,16 +72,23 @@ void print_results(struct Process *processes, int num_processes, int time_quantu
         if (temp_bt[i] == 0 && count == 1)
         {
             y--;
+            turnaround_time = completion_time - processes[i].arrival_time;
+            if(turnaround_time < 0)
+                turnaround_time = 0;
+            waiting_time = turnaround_time - processes[i].burst_time;
+            if(waiting_time < 0)
+                waiting_time = 0;
             // Calculate turnaround time and waiting time for the completed process
             printf("%d \t\t%d \t\t%d \t\t%d \t\t\t%d \t\t\t%d\n",
                    i + 1,
                    processes[i].arrival_time,
                    processes[i].burst_time,
                    completion_time,
-                   completion_time - processes[i].arrival_time,
-                   completion_time - processes[i].arrival_time - processes[i].burst_time);
-            total_turnaround_time += completion_time - processes[i].arrival_time;
-            total_waiting_time += completion_time - processes[i].arrival_time - processes[i].burst_time;
+                   turnaround_time,
+                   waiting_time
+                   );
+            total_turnaround_time += turnaround_time;
+            total_waiting_time += waiting_time;
             count = 0;
         }
         // move to the next process in the queue
