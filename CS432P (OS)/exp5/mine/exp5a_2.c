@@ -2,9 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define Process structure
-struct Process
-{
+// Define process structure
+struct process {
     int process_id;
     int arrival_time;
     int burst_time;
@@ -13,7 +12,7 @@ struct Process
 };
 
 // Read arrival time and burst time for each process
-int read_processes(struct Process *processes, int num_processes)
+int read_processes(struct process *processes, int num_processes)
 {
     printf("\n");
     // Loop over each process and read arrival time and burst time
@@ -35,7 +34,7 @@ int read_processes(struct Process *processes, int num_processes)
 }
 
 // Print the results of the Round Robin algorithm
-void print_results(struct Process *processes, int num_processes, int time_quantum)
+void print_results(struct process *processes, int num_processes, int time_quantum)
 {
     int temp_bt[num_processes];
     int count = 0, completion_time = 0, y = num_processes;
@@ -104,7 +103,7 @@ void print_results(struct Process *processes, int num_processes, int time_quantu
 int main()
 {
     int num_processes, time_quantum;
-    struct Process *processes;
+    struct process *processes;
 
     printf("\n*Round Robin CPU Scheduling Algorithm*\n");
 
@@ -117,7 +116,7 @@ int main()
     }
 
     // Allocate memory for the processes array
-    processes = malloc(num_processes * sizeof(struct Process));
+    processes = malloc(num_processes * sizeof(struct process));
     if (processes == NULL)
     {
         printf("\nMemory Allocation Error: Failed to allocate memory for processes.\n\n");

@@ -23,7 +23,7 @@ int main()
     printf("\nEnter arrival time and burst time of all the processes:\n");
     for (int i = 0; i < n; i++)
     {
-        printf("Process %d: ", i + 1);
+        printf("process %d: ", i + 1);
         if (scanf("%d%d", &at[i], &bt[i]) != 2 || at[i] < 0 || bt[i] < 0)
         {
             printf("\nInput Error: The arrival time and brust time must be positive\n\n");
@@ -46,7 +46,7 @@ int main()
 
     printf("\n*Results*\n");
 
-    printf("\nProcess \tArrival Time \tBurst Time \tWaiting Time \tCompletion Time \tTurnaround Time\n");
+    printf("\nprocess \tArrival Time \tBurst Time \tWaiting Time \tCompletion Time \tTurnaround Time\n");
     float twt = 0.0, ttt = 0.0;
     for (i = 0; i < n; i++)
     {

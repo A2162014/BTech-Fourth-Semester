@@ -1,0 +1,3 @@
+C:/Users/ashva/Work/christ/2nd year/4th sem/practicals/cmake-build-debug/CMakeFiles/practicals.dir
+C:/Users/ashva/Work/christ/2nd year/4th sem/practicals/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ashva/Work/christ/2nd year/4th sem/practicals/cmake-build-debug/CMakeFiles/rebuild_cache.dir

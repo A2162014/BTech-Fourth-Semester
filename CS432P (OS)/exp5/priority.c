@@ -2,7 +2,7 @@
 Experiment Name: Program for Priority (Non Pre-emptive) for Scheduling.
 Algorithm:
     ● Priority scheduling is a non-preemptive algorithm and one of the most common scheduling algorithms in batch systems.
-    ● Each process is assigned a priority. Process with highest priority is to be executed first and so on.
+    ● Each process is assigned a priority. process with highest priority is to be executed first and so on.
     ● Processes with same priority are executed on first come first served basis.
     ● Priority can be decided based on memory requirements, time requirements or any other resource requirement.
 */
@@ -10,7 +10,7 @@ Algorithm:
 int main()
 {
     int bt[20], p[20], wt[20], tat[20], pr[20], i, j, n, total = 0, pos, temp, avg_wt, avg_tat;
-    printf("Enter Total Number of Process:");
+    printf("Enter Total Number of process:");
     scanf("%d", &n);
     printf("\nEnter Burst Time and Priority\n");
     for (i = 0; i < n; i++)
@@ -50,7 +50,7 @@ int main()
     }
     avg_wt = total / n;
     total = 0;
-    printf("\nProcess\t Burst Time \tWaiting Time\tTurnaround Time");
+    printf("\nprocess\t Burst Time \tWaiting Time\tTurnaround Time");
     for (i = 0; i < n; i++)
     {
         tat[i] = bt[i] + wt[i];

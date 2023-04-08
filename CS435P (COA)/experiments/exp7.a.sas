@@ -1,0 +1,30 @@
+1,20,#FALSE#,#FALSE#,"exp7.a",0,0,0,89,1,6,-1335463284
+0,0,0,0,0,0
+0
+0
+1
+"keyfound",82
+0,0,"MOV #15, R01",0,0,0,0,#FALSE#
+6,0,"MOV #7, R02",0,0,0,0,#FALSE#
+12,0,"MOV #11, R03",0,0,0,0,#FALSE#
+18,0,"MOV #12, R04",0,0,0,0,#FALSE#
+24,0,"MOV #9, R05",0,0,0,0,#FALSE#
+30,0,"MOV #6, R00",0,0,0,0,#FALSE#
+36,3,"CMP R00, R01",0,0,0,0,#FALSE#
+41,2,"JEQ $keyfound",0,0,0,0,#FALSE#
+45,3,"CMP R00, R02",0,0,0,0,#FALSE#
+50,2,"JEQ $keyfound",0,0,0,0,#FALSE#
+54,3,"CMP R00, R03",0,0,0,0,#FALSE#
+59,2,"JEQ $keyfound",0,0,0,0,#FALSE#
+63,3,"CMP R00, R04",0,0,0,0,#FALSE#
+68,2,"JEQ $keyfound",0,0,0,0,#FALSE#
+72,3,"CMP R00, R05",0,0,0,0,#FALSE#
+77,2,"JEQ $keyfound",0,0,0,0,#FALSE#
+81,2,"HLT",0,0,0,0,#FALSE#
+82,-1,"keyfound",0,0,0,0,#FALSE#
+82,0,"MOV #1, R10",0,0,0,0,#FALSE#
+88,2,"HLT",0,0,0,0,#FALSE#
+0
+0
+0
+-1

@@ -16,7 +16,7 @@ int main(void)
 	int n, bt[20], wt[20], tat[20], avwt = 0, avtat = 0, i, j, k;
 	printf("Enter total number of processes(maximum 20):");
 	scanf("%d", &n);
-	printf("\nEnter Process Burst Time\n");
+	printf("\nEnter process Burst Time\n");
 	for (i = 0; i < n; i++)
 	{
 		printf("P[%d]:", i + 1);
@@ -30,7 +30,7 @@ int main(void)
 		for (j = 0; j < i; j++)
 			wt[i] += bt[j];
 	}
-	printf("\nProcess\t\tBurst Time\tWaiting Time\tTurnaround Time");
+	printf("\nprocess\t\tBurst Time\tWaiting Time\tTurnaround Time");
 	// calculating turnaround time
 	for (i = 0; i < n; i++)
 	{

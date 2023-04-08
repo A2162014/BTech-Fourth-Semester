@@ -19,7 +19,7 @@ Reading Notes:
 2. exec(): to assign a task to child process
 3. exit(): to end the process
 4. getpid(): returns process id of calling process
-5. getppid(): return Parent of child Process means Parent process it self
+5. getppid(): return Parent of child process means Parent process it self
 *****************************************
 Sample program to display sum of even numbers(in parent process) and sum of odd numbers(in child processs)
 
@@ -53,7 +53,7 @@ else if (pid == 0){
 	// getpid() returns process id of calling process
 	// Here It will return process id of child process
 	printf("child process, pid = %u\n",getpid());
-	// Here It will return Parent of child Process means Parent process it self
+	// Here It will return Parent of child process means Parent process it self
 	printf("parent of child process, pid = %u\n",getppid());
 
 	printf("From child process\n");

@@ -25,7 +25,7 @@ int main()
     int burst[n], priority[n], index[n];
     for (int i = 0; i < n; i++)
     {
-        printf("Enter Burst Time and Priority Value for Process %d: ", i + 1);
+        printf("Enter Burst Time and Priority Value for process %d: ", i + 1);
         if (scanf("%d %d", &burst[i], &priority[i]) != 2 || burst[i] < 0 || priority[i] < 0)
         {
             printf("\nInvalid Input Error: Burst time and Priority time must be non-negative integers.\n\n");
@@ -55,13 +55,13 @@ int main()
 
     printf("\n*Results*\n");
 
-    printf("\nOrder of Process Execution:\n");
+    printf("\nOrder of process Execution:\n");
     for (int i = 0; i < n; i++)
     {
-        printf("Process %d is executed from %d to %d\n", index[i], t, t + burst[i]);
+        printf("process %d is executed from %d to %d\n", index[i], t, t + burst[i]);
         t += burst[i];
     }
-    printf("\nProcess \tBurst Time\tWait Time\n");
+    printf("\nprocess \tBurst Time\tWait Time\n");
     int wait_time = 0;
     int total_wait_time = 0;
     for (int i = 0; i < n; i++)

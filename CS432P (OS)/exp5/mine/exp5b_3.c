@@ -3,8 +3,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-struct Process
-{
+struct process {
     int pid;
     int arrival_time;
     int burst_time;
@@ -14,10 +13,10 @@ struct Process
     int turn_time;
 };
  
-void SJF(struct Process p[], int n);
-void CalculateWaitingTime(struct Process p[], int n);
-void CalculateTurnaroundTime(struct Process p[], int n);
-void PrintResults(struct Process p[], int n, float avg_wt, float avg_tat);
+void SJF(struct process p[], int n);
+void CalculateWaitingTime(struct process p[], int n);
+void CalculateTurnaroundTime(struct process p[], int n);
+void PrintResults(struct process p[], int n, float avg_wt, float avg_tat);
 int GetIntegerInput(char message[]);
 int GetPositiveIntegerInput(char message[]);
 
@@ -31,7 +30,7 @@ int main()
     n = GetPositiveIntegerInput("\nEnter the number of processes: ");
 
     // Get process details from user
-    struct Process p[n];
+    struct process p[n];
     printf("\nEnter process details:\n");
     for (int i = 0; i < n; i++)
     {
@@ -59,7 +58,7 @@ int main()
     return 0;
 }
 
-void SJF(struct Process p[], int n)
+void SJF(struct process p[], int n)
 {
     int time = 0, count = 0;
 
@@ -102,19 +101,19 @@ void SJF(struct Process p[], int n)
     CalculateWaitingTime(p, n);
 }
 
-void CalculateWaitingTime(struct Process p[], int n)
+void CalculateWaitingTime(struct process p[], int n)
 {
     for (int i = 0; i < n; i++)
         p[i].wait_time = p[i].comp_time - p[i].arrival_time - p[i].burst_time;
 }
 
-void CalculateTurnaroundTime(struct Process p[], int n)
+void CalculateTurnaroundTime(struct process p[], int n)
 {
     for (int i = 0; i < n; i++)
         p[i].turn_time = p[i].comp_time - p[i].arrival_time;
 }
 
-void PrintResults(struct Process p[], int n, float avg_wt, float avg_tat)
+void PrintResults(struct process p[], int n, float avg_wt, float avg_tat)
 {
     // Sort processes in ascending order of completion time
     for (int i = 0; i < n - 1; i++)
@@ -123,7 +122,7 @@ void PrintResults(struct Process p[], int n, float avg_wt, float avg_tat)
         {
             if (p[j].comp_time > p[j + 1].comp_time)
             {
-                struct Process temp = p[j];
+                struct process temp = p[j];
                 p[j] = p[j + 1];
                 p[j + 1] = temp;
             }
