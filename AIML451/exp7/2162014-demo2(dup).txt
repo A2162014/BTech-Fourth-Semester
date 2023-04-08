@@ -1,0 +1,3 @@
+Hello again!
+I am 2162014-demo2.txt, second demo file for exp7
+using write operation

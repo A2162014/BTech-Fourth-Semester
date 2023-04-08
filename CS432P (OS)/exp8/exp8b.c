@@ -33,7 +33,7 @@ int main() {
         exit(1);
     }
 
-    // Get the sizes of the blocks and processes
+    // Get the sizes of the blocks and
     printf("Enter the size of the blocks:\n");
     for (i = 0; i < numBlocks; i++) {
         printf("Block %d: ", i + 1);
@@ -86,7 +86,8 @@ void allocateMemory(int blockSizes[], int processSizes[], int numBlocks, int num
     printf("\nProcess No.\tProcess Size\tBlock No.\tBlock Size\tFragmentation\n");
     for (i = 0; i < numProcesses; i++) {
         if (pArray[i] != -1) {
-            printf("%d\t\t%d\t\t%d\t\t%d\t\t%d\n", i + 1, processSizes[i], pArray[i] + 1, blockSizes[pArray[i]], fragment[i]);
+            printf("%d\t\t%d\t\t%d\t\t%d\t\t%d\n", i + 1, processSizes[i], pArray[i] + 1, blockSizes[pArray[i]],
+                   fragment[i]);
         } else {
             printf("%d\t\t%d\t\t%s\n", i + 1, processSizes[i], "Not Allocated");
         }
