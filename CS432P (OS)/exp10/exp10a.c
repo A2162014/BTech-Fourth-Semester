@@ -1,6 +1,5 @@
-// Experiment No: 10a - Memory Management using LRU
+// Experiment No: 10a–Memory Management using LRU
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAX_FRAMES 10
 #define MAX_REF_STR_LEN 100
@@ -59,7 +58,7 @@ int main() {
     int num_frames, ref_str_len, i;
     int frames[MAX_FRAMES], time[MAX_FRAMES], ref_str[MAX_REF_STR_LEN];
 
-    printf("Memory Management Scheme - LRU by 2162014\n");
+    printf("Memory Management Scheme—LRU by 2162014\n");
 
     printf("Enter the number of frames (max %d): ", MAX_FRAMES);
     scanf("%d", &num_frames);

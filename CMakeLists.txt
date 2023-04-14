@@ -308,4 +308,4 @@ add_executable(practicals
         "CS435P (COA)/CS435P_TOPICS(PRATICALS-2).png"
         .gitignore
         "MSE Lab - March 2023.xlsx"
-        README.md "CS432P (OS)/exp8/exp8b.c")
+        README.md "CS432P (OS)/exp8/exp8b.c" "CS432P (OS)/exp9/exp9a.c" "CS432P (OS)/exp9/exp9a.c" "CS432P (OS)/exp9/exp9a.c" "CS432P (OS)/exp9/exp9a.c" "CS432P (OS)/exp9/exp9b.c" "CS432P (OS)/exp10/exp10a.c" "CS432P (OS)/exp10/exp10b.c" "CS432P (OS)/exp10/exp10b.c" "CS432P (OS)/exp9/exp9a.c" "CS432P (OS)/exp10/exp10a.c" "CS432P (OS)/exp10/exp10b.c")

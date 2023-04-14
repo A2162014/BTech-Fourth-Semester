@@ -1,14 +1,14 @@
-// Experiment No: 9b - Memory Management using First In First Out Replacement Algorithm.
+// Experiment No: 9b–Memory Management using First In First Out Replacement Algorithm.
 #include <stdio.h>
 
 int main() {
     // Declare variables
     int i, j, n, a[50], frame[10], no, k, avail, count = 0;
 
-    printf("Memory Management Scheme - FIFO by 2162014\n");
+    printf("Memory Management Scheme – FIFO by 2162014\n");
     
     // Prompt user for input
-    printf("Enter the number of pages: ");
+    printf("Enter the number of pages:");
     scanf("%d", &n);
 
     // Validate input
@@ -17,11 +17,11 @@ int main() {
         return 0;
     }
 
-    printf("Enter the page numbers: ");
+    printf("Enter the page numbers:");
     for (i = 1; i <= n; i++)
         scanf("%d", &a[i]);
 
-    printf("Enter the number of frames: ");
+    printf("Enter the number of frames:");
     scanf("%d", &no);
 
     // Validate input

@@ -1,13 +1,13 @@
-// Experiment No: 10b - Memory Management using Optimal
+// Experiment No: 10b–Memory Management using Optimal
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct PageFrame {
     int page;
-    int future_occurrence;
+    int future_occurrence; 0
 } PageFrame;
 
-int find_optimal_page(PageFrame page_frames[], int num_frames, int pages[], int num_pages, int start_index) {
+int find_optimal_page(PageFrame page_frames[], int num_frames) {
     int index = -1, max_future_occurrence = -1;
     for (int i = 0; i < num_frames; i++) {
         int future_occurrence = page_frames[i].future_occurrence;
@@ -43,7 +43,7 @@ int simulate_policy(PageFrame page_frames[], int num_frames, int pages[], int nu
             }
         }
         if (index == -1) {
-            index = find_optimal_page(page_frames, num_frames, pages, num_pages, i);
+            index = find_optimal_page(page_frames, num_frames);
             page_frames[index].page = page;
             page_frames[index].future_occurrence = i;
             (*num_page_faults)++;
@@ -64,11 +64,11 @@ int simulate_policy(PageFrame page_frames[], int num_frames, int pages[], int nu
 int main() {
     int num_frames, num_pages;
 
-    printf("Memory Management Scheme - Optimal by 2162014\n");
+    printf("Memory Management Scheme—Optimal by 2162014\n");
 
-    printf("Enter the number of page frames: ");
+    printf("Enter the number of page frames:");
     scanf("%d", &num_frames);
-    printf("Enter the number of pages: ");
+    printf("Enter the number of pages:");
     scanf("%d", &num_pages);
     if (num_frames <= 0 || num_pages <= 0) {
         printf("Error: invalid input values\n");

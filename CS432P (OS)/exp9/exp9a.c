@@ -1,6 +1,5 @@
-// Experiment No: 9a - Memory Management using Worst Fit
+// Experiment No: 9a–Memory Management using Worst Fit
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAX_BLOCKS 25
 #define MAX_PROCESSES 25
@@ -20,7 +19,7 @@ void allocate_blocks(int block_sizes[], int process_sizes[], int assigned_blocks
 
     for (int i = 1; i <= num_processes; i++) {
         for (int j = 1; j <= num_blocks; j++) {
-            if (bf[j] == 0) {// if bf[j] is not allocated
+            if (bf[j] == 0) {// if bf[j] isn't allocated
                 temp = block_sizes[j] - process_sizes[i];
                 if (temp >= 0 && highest < temp) {
                     ff[i] = j;
@@ -35,7 +34,7 @@ void allocate_blocks(int block_sizes[], int process_sizes[], int assigned_blocks
         highest = 0;
     }
 
-    printf("\nFile_no:\tFile_size :\tBlock_no:\tBlock_size:\tFragement\n");
+    printf("\nFile_no:\tFile_size :\tBlock_no:\tBlock_size:\tFragment\n");
     for (int i = 1; i <= num_processes; i++) {
         printf("%d\t\t%d\t\t%d\t\t%d\t\t%d\n", i, process_sizes[i],
                assigned_blocks[i], block_sizes[assigned_blocks[i]], frag[i]);
@@ -46,7 +45,7 @@ int main() {
     int block_sizes[MAX_BLOCKS], process_sizes[MAX_PROCESSES], assigned_blocks[MAX_PROCESSES];
     int num_blocks, num_processes;
 
-    printf("Memory Management Scheme - Worst Fit by 2162014\n");
+    printf("Memory Management Scheme—Worst Fit by 2162014\n");
     printf("Enter the number of blocks:");
     scanf("%d", &num_blocks);
     printf("Enter the number of files:");
