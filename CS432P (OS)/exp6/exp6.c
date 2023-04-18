@@ -23,81 +23,59 @@ Algorithm:
 
 10.Repeat steps 5-9 until the user chooses to exit the program.
 */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define BUFFER_SIZE 3
 
-int mutex = 1, full = 0, empty = BUFFER_SIZE, x = 0;
+int buffer[BUFFER_SIZE];
+int in = 0, out = 0, count = 0;
 
-void producer();
-void consumer();
-int wait(int *);
-int signal(int *);
+void producer() {
+    int item = rand();
+    if (count < BUFFER_SIZE) {
+        buffer[in] = item;
+        printf("Producer produces item %d\n", item);
+        in = (in + 1) % BUFFER_SIZE;
+        count++;
+    }
+    else {
+        printf("Buffer is full!\n");
+    }
+}
 
-int main()
-{
-    int n;
-    printf("\nProducer Consumer Problem using Semaphore by 2162014\n");
-    printf("\n1.Producer\n2.Consumer\n3.Exit\n");
-    while (1)
-    {
-        printf("\nEnter your choice: ");
-        if (scanf("%d", &n) != 1)
-        {
-            printf("Invalid input!\n");
-            continue;
-        }
-        switch (n)
-        {
-        case 1:
-            if (empty == 0)
-                printf("Buffer is full!!\n");
-            else
+void consumer() {
+    if (count > 0) {
+        int item = buffer[out];
+        printf("Consumer consumes item %d\n", item);
+        out = (out + 1) % BUFFER_SIZE;
+        count--;
+    }
+    else {
+        printf("Buffer is empty!\n");
+    }
+}
+
+int main() {
+    printf("Producer-Consumer Problem using Circular Buffer\n");
+    while (true) {
+        printf("\n1. Produce\n2. Consume\n3. Exit\n");
+        int choice;
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
                 producer();
-            break;
-        case 2:
-            if (full == 0)
-                printf("Buffer is empty!!\n");
-            else
+                break;
+            case 2:
                 consumer();
-            break;
-        case 3:
-            exit(0);
-        default:
-            printf("Invalid choice!\n");
+                break;
+            case 3:
+                exit(0);
+            default:
+                printf("Invalid Choice!\n");
+                break;
         }
     }
     return 0;
-}
-
-int wait(int *s)
-{
-    return --(*s);
-}
-
-int signal(int *s)
-{
-    return ++(*s);
-}
-
-void producer()
-{
-    mutex = wait(&mutex);
-    full = signal(&full);
-    empty = wait(&empty);
-    x++;
-    printf("Producer produces the item %d\n", x);
-    mutex = signal(&mutex);
-}
-
-void consumer()
-{
-    mutex = wait(&mutex);
-    full = wait(&full);
-    empty = signal(&empty);
-    printf("Consumer consumes item %d\n", x);
-    x--;
-    mutex = signal(&mutex);
 }

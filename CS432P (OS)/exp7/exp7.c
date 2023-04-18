@@ -17,7 +17,6 @@ Algorithm:
 
 5.End.
 */
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,38 +29,20 @@ int max[MAX_PROCESSES][MAX_RESOURCES];
 int need[MAX_PROCESSES][MAX_RESOURCES];
 int finished[MAX_PROCESSES];
 int output[MAX_PROCESSES];
-int numProcesses;
+int num_processes;
 int num_resources;
-int count;
 
-void print_output()
-{
-    printf("\nIdeal order of execution:\n");
-    printf("<");
-    for (int i = 0; i < numProcesses; i++)
-    {
-        if (i < numProcesses - 1)
-            printf("P[%d], ", output[i]);
-        else
-            printf("P[%d]", output[i]);
-    }
-    printf(">\n\n");
-}
-
-int can_be_allocated(int process_index)
-{
-    for (int i = 0; i < num_resources; i++)
-    {
-        if (need[process_index][i] > available[i])
+int can_be_allocated(int process_index) {
+    for (int i = 0; i < num_resources; i++) {
+        if (need[process_index][i] > available[i]) {
             return 0;
+        }
     }
     return 1;
 }
 
-void allocate_resources(int process_index)
-{
-    for (int i = 0; i < num_resources; i++)
-    {
+void allocate_resources(int process_index) {
+    for (int i = 0; i < num_resources; i++) {
         available[i] += allocated[process_index][i];
         allocated[process_index][i] = 0;
         max[process_index][i] = 0;
@@ -70,53 +51,50 @@ void allocate_resources(int process_index)
     finished[process_index] = 1;
 }
 
-void banker_algorithm()
-{
+void banker_algorithm() {
     int k = 0;
-    while (1)
-    {
+    while (1) {
         int can_allocate = 0;
-        for (int i = 0; i < numProcesses; i++)
-        {
-            if (!finished[i] && can_be_allocated(i))
-            {
+        for (int i = 0; i < num_processes; i++) {
+            if (!finished[i] && can_be_allocated(i)) {
                 can_allocate = 1;
-                output[k] = i;
-                k++;
+                output[k++] = i;
                 allocate_resources(i);
             }
         }
-        if (!can_allocate)
+        if (!can_allocate) {
             break;
+        }
     }
-    if (k == numProcesses)
-        print_output();
-    else
+    if (k == num_processes) {
+        printf("\nIdeal order of execution:\n<");
+        for (int i = 0; i < num_processes - 1; i++) {
+            printf("P[%d], ", output[i]);
+        }
+        printf("P[%d]>\n\n", output[num_processes - 1]);
+    } else {
         printf("\nDeadlock detected!\n");
+    }
 }
 
-int main()
-{
+int main() {
     printf("\nDead-Lock Avoidance using Banker's Algorithm by 2162014\n");
     printf("\nEnter the number of resources: ");
     scanf("%d", &num_resources);
 
     printf("\nEnter the max instances of each resource:\n");
-    for (int i = 0; i < num_resources; i++)
-    {
+    for (int i = 0; i < num_resources; i++) {
         printf("%c = ", i + 97);
         scanf("%d", &available[i]);
     }
 
     printf("\nEnter the number of processes: ");
-    scanf("%d", &numProcesses);
+    scanf("%d", &num_processes);
 
     printf("\nEnter the allocation matrix:\n");
-    for (int i = 0; i < numProcesses; i++)
-    {
+    for (int i = 0; i < num_processes; i++) {
         printf("P[%d]: \n", i);
-        for (int j = 0; j < num_resources; j++)
-        {
+        for (int j = 0; j < num_resources; j++) {
             printf("%c = ", j + 97);
             scanf("%d", &allocated[i][j]);
             available[j] -= allocated[i][j];
@@ -125,11 +103,9 @@ int main()
     }
 
     printf("\nEnter the max matrix:\n");
-    for (int i = 0; i < numProcesses; i++)
-    {
+    for (int i = 0; i < num_processes; i++) {
         printf("P[%d]: \n", i);
-        for (int j = 0; j < num_resources; j++)
-        {
+        for (int j = 0; j < num_resources; j++) {
             printf("%c = ", j + 97);
             scanf("%d", &max[i][j]);
             need[i][j] = max[i][j] - allocated[i][j];
