@@ -1,0 +1,15 @@
+// SYNTAX:
+
+try {
+    // the code you think can throw an exception
+}
+catch (Exception1 ex1) {
+    // exception handler for Exception1
+}
+catch (Exception2 ex2) {
+    // exception handler for Exception2
+}
+finally {
+    // block of code to be executed after try block
+    ends whether exception occurred or not.
+}

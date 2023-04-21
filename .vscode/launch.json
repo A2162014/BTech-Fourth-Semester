@@ -2,6 +2,280 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MyGridLayout",
+      "request": "launch",
+      "mainClass": "MyGridLayout",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "MyFlowLayout",
+      "request": "launch",
+      "mainClass": "MyFlowLayout",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "fontimage",
+      "request": "launch",
+      "mainClass": "fontimage",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ComboBoxExample",
+      "request": "launch",
+      "mainClass": "ComboBoxExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ComboBox",
+      "request": "launch",
+      "mainClass": "ComboBox",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CheckBox",
+      "request": "launch",
+      "mainClass": "CheckBox",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Border",
+      "request": "launch",
+      "mainClass": "Border",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AdapterExample",
+      "request": "launch",
+      "mainClass": "AdapterExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ActionMouse",
+      "request": "launch",
+      "mainClass": "ActionMouse",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ActionListenerExample",
+      "request": "launch",
+      "mainClass": "ActionListenerExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "th",
+      "request": "launch",
+      "mainClass": "th",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "NestedTryBlock",
+      "request": "launch",
+      "mainClass": "NestedTryBlock",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "JavaExample1",
+      "request": "launch",
+      "mainClass": "JavaExample1",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "JavaExample",
+      "request": "launch",
+      "mainClass": "JavaExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Frequency",
+      "request": "launch",
+      "mainClass": "Frequency",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "MatrixMultiplicationExample",
+      "request": "launch",
+      "mainClass": "MatrixMultiplicationExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "OuterClass",
+      "request": "launch",
+      "mainClass": "OuterClass",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Distanceaddition",
+      "request": "launch",
+      "mainClass": "Distanceaddition",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Array_demo",
+      "request": "launch",
+      "mainClass": "Array_demo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Calculator",
+      "request": "launch",
+      "mainClass": "Calculator",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ItemListenerExample",
+      "request": "launch",
+      "mainClass": "ItemListenerExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ScrollBarExample",
+      "request": "launch",
+      "mainClass": "ScrollBarExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "MenuExample",
+      "request": "launch",
+      "mainClass": "MenuExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "OptionPaneExample",
+      "request": "launch",
+      "mainClass": "OptionPaneExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Radiobutton",
+      "request": "launch",
+      "mainClass": "Radiobutton",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "PasswordFieldExample",
+      "request": "launch",
+      "mainClass": "PasswordFieldExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "TextFieldExample",
+      "request": "launch",
+      "mainClass": "TextFieldExample",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "components",
+      "request": "launch",
+      "mainClass": "components"
+    },
+    {
+      "type": "java",
+      "name": "FirstSwingExample",
+      "request": "launch",
+      "mainClass": "FirstSwingExample"
+    },
+    {
+      "type": "java",
+      "name": "Test",
+      "request": "launch",
+      "mainClass": "Test"
+    },
+    {
+      "type": "java",
+      "name": "Multi3",
+      "request": "launch",
+      "mainClass": "Multi3"
+    },
+    {
+      "type": "java",
+      "name": "Multi",
+      "request": "launch",
+      "mainClass": "Multi"
+    },
+    {
+      "type": "java",
+      "name": "excep",
+      "request": "launch",
+      "mainClass": "excep",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Stack",
+      "request": "launch",
+      "mainClass": "Stack"
+    },
+    {
+      "type": "java",
+      "name": "palindrome",
+      "request": "launch",
+      "mainClass": "palindrome"
+    },
+    {
+      "type": "java",
+      "name": "Input",
+      "request": "launch",
+      "mainClass": "Input"
+    },
+    {
+      "type": "java",
+      "name": "Example",
+      "request": "launch",
+      "mainClass": "Example"
+    },
+    {
+      "type": "java",
+      "name": "MatrixAdditionExample",
+      "request": "launch",
+      "mainClass": "MatrixAdditionExample"
+    },
+    {
+      "type": "java",
+      "name": "LayoutDemo",
+      "request": "launch",
+      "mainClass": "LayoutDemo"
+    },
+    {
+      "type": "java",
+      "name": "UI_demo",
+      "request": "launch",
+      "mainClass": "UI_demo"
+    },
+    {
+      "type": "java",
+      "name": "gui",
+      "request": "launch",
+      "mainClass": "gui"
+    },
+    {
+      "type": "java",
       "name": "Game",
       "request": "launch",
       "mainClass": "Game",

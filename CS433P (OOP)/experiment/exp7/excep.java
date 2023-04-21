@@ -2,6 +2,13 @@
 //Throwing an exception when the transfer amount is greater than the available balance in the
 //customer's account. Write a JAVA code for the same
 
+class InsufficientFundsException extends Exception {
+
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
 public class excep {
 
     private double balance;
@@ -10,8 +17,7 @@ public class excep {
         balance = initialBalance;
     }
 
-    public void transfer(double amount, excep recipient) throws
-            InsufficientFundsException {
+    public void transfer(double amount, excep recipient) throws InsufficientFundsException {
         try {
             if (amount > balance) {
                 throw new InsufficientFundsException("Transfer amount exceeds available balance");
@@ -40,12 +46,5 @@ public class excep {
             System.out.println("Acc1 balance after transfer: " + account1.balance);
             System.out.println("Acc2 balance after transfer: " + account2.balance);
         }
-    }
-}
-
-class InsufficientFundsException extends Exception {
-
-    public InsufficientFundsException(String message) {
-        super(message);
     }
 }

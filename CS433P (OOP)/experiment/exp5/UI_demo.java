@@ -111,10 +111,14 @@ class Calculator implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == addButton) {
-            int x = Integer.parseInt(input1Field.getText());
-            int y = Integer.parseInt(input2Field.getText());
-            int sum = x + y;
-            resultField.setText(Integer.toString(sum));
+            try {
+                int x = Integer.parseInt(input1Field.getText());
+                int y = Integer.parseInt(input2Field.getText());
+                int sum = x + y;
+                resultField.setText(Integer.toString(sum));
+            } catch (NumberFormatException ex) {
+                resultField.setText("Invalid input");
+            }
         } else if (e.getSource() == yellowButton) {
             panel.setBackground(Color.yellow);
             greenButton.setSelected(false);
@@ -123,6 +127,7 @@ class Calculator implements ActionListener {
             yellowButton.setSelected(false);
         }
     }
+    
 }
 
 public class UI_demo {
